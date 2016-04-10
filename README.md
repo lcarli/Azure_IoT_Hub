@@ -1,5 +1,5 @@
-node-red-contrib-azure-iot
-=====================
+node-red-contrib-azure-iot-hub
+==============================
 
 <a href="http://nodered.org" target="_new">Node-RED</a> nodes to talk to Azure IoT Hub.
 
@@ -10,7 +10,7 @@ Install
 
 Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-        npm install node-red-contrib-azure-iot
+        npm install node-red-contrib-azure-iot-hub
 
 Usage
 -----
@@ -21,12 +21,12 @@ Provides two nodes - one to receive messages (output), and one to send (input).
 
 Azure input node. Can be used to send a message to Azure IoT Hub:
 
- - Suports AMQP, MQTT and HTTP protocols
- - Suports RegistryManager
+ - Supports AMQP, MQTT and HTTP protocols
+ - Supports RegistryManager
 
 Use `msg.payload` to send a string with all data what you want to send to Azure.
 
-Ex: 'msg.paylod' -> "temp: 25, lum: 30, hum: 20)
+Ex: 'msg.payload' -> "temp: 25, lum: 30, hum: 20"
 
 Read more about Azure IoT Hub on <a href="https://azure.microsoft.com/en-us/documentation/services/iot-hub/">Azure IoT Hub</a>.
 
@@ -35,8 +35,8 @@ Read more about Azure IoT Hub on <a href="https://azure.microsoft.com/en-us/docu
 
 Azure output node. Can be used to read a message from Azure IoT Hub:
 
- - Suports AMQP, MQTT and HTTP protocols
+ - Supports AMQP, MQTT and HTTP protocols
 
-When the connector read something, it will pass <code>msg.payload</code> as output message with content.
+When the connector reads something, it will pass <code>msg.payload</code> as output message with content.
 
 Read more about Azure IoT Hub on <a href="https://azure.microsoft.com/en-us/documentation/services/iot-hub/">Azure IoT Hub</a>.
