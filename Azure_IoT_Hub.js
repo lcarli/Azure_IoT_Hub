@@ -1,5 +1,5 @@
 /**
- * Copyright 2013, 2015 IBM Corp.
+ * Copyright 2016, Microsoft Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,4 +64,50 @@ module.exports = function(RED) {
         }, timer);
      }
      RED.nodes.registerType("Azure",Azure_IoT_Hub_IN);
+     
+     //reading from Azure IoT Hub
+     function Azure_IoT_Hub_OUT(config) {
+        RED.nodes.createNode(this,config);
+        //required
+        var device = require('azure-iot-device');
+        var Protocol;
+        var ProtocolHTTP = require('azure-iot-device-http').Http; 
+        var ProtocolAMQP = require('azure-iot-device-amqp').Amqp;
+        var ProtocolMQTT = require('azure-iot-device-mqtt').Mqtt;
+
+        //getting from HTML
+        var connectionString = config.connectionString;
+        var deviceID = config.deviceID;
+        var timer = config.timer; 
+        var method = config.method;
+
+        //global variables
+        var values;
+
+            
+        //Conection with Azure IoT Hub
+        if (method == "AMQP")
+        {
+            Protocol = ProtocolAMQP;
+        }
+        else if (method == "MQTT")
+        {
+            Protocol = ProtocolMQTT;
+        }
+        else
+        {
+            Protocol = ProtocolHTTP;
+        }
+        
+        var client = new device.Client.fromConnectionString(connectionString, Protocol);
+
+        // Read a message
+            client.on('message', function (msg) {
+            //console.log('Id: ' + msg.messageId + ' Body: ' + msg.data);
+            var message = 'Id: ' + msg.messageId + ' Body: ' + msg.data;
+            values = {payload:message}
+            client.complete(msg, this.send(values));
+         });
+     }
+     RED.nodes.registerType("Azure",Azure_IoT_Hub_OUT);
 }

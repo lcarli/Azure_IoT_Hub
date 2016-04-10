@@ -49,7 +49,7 @@
     </p>
     <p></p>
     <p>
-       This connector receive a <code>msg.payload</code> - as string - as a value to send to Azure. 
+       This connector receive a <code>msg.payload</code> - as string to send to Azure. 
     </p>
     <p>
         <b>NOTE:</b> Make sure to create a service on Azure before to use this connector.
@@ -88,5 +88,82 @@
         },
         inputs:1,
         outputs:0
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Azure_IoT_Hub_OUT">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-connectionString"><i class="fa fa-tag"></i> connectionstring</label>
+        <input type="text" id="node-input-connectionString" placeholder="connection string">
+    </div>
+    <div class="form-row">
+        <label for="node-input-deviceID"><i class="fa fa-tag"></i> deviceID</label>
+        <input type="text" id="node-input-deviceID" placeholder="Device ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-method"><i class="fa fa-tasks"></i> HTTP</label>
+        <select type="text" id="node-input-method" style="width:72%;">
+        <option value="HTTPS">HTTPS</option>
+        <option value="AMQP">AMQP</option>
+        <option value="MQTT">MQTT</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-timer"><i class="fa fa-tag"></i> timer</label>
+        <input type="text" id="node-input-timer" placeholder="Timer">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Azure_IoT_Hub_OUT">
+    <p>Provides an output node for Azure IoT Hub that you can read data.</p>
+    <p></p>
+    <p>
+        Connection String <b>must</b> be in this format -> <code>HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key></code>
+    </p>
+    <p></p>
+    <p>
+       This connector sent a <code>msg.payload</code> - as string to downstream node. 
+    </p>
+    <p>
+        <b>NOTE:</b> Make sure to create a service on Azure before to use this connector.
+    </p>
+    <p></p>
+    <p>
+        <ul>
+            <li>AMQP is a protocol. That means Advanced Message Queue Protocol. To know more, please visit <a href="https://www.amqp.org/">https://www.aqmp.org</a>.</li>
+        </ul>
+    </p>
+    <p></p>
+    <p>
+        <ul>
+            <li>MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. To know more, please visit <a href="http://mqtt.org/">http://mqtt.org/</a>.</li>
+        </ul>
+    </p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('Azure_IoT_Hub_OUT',{
+        category: 'cloud-function',
+        color:"rgb(0, 171, 237)",
+        label: function() {
+            return this.name||"Azure Client";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        },
+        icon: "white-globe.png",
+        defaults: {
+            name: {value:"Azure Client"},
+            connectionString: {value:"",required:true},
+            deviceID: {value:"",required:true},
+            method: {value:"HTTPS",required:true},
+            timer: {value:1000, required:true, validate:RED.validators.number()}
+        },
+        inputs:0,
+        outputs:1
     });
 </script>
