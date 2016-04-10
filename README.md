@@ -1,4 +1,4 @@
-node-red-azure-iot
+node-red-contrib-azure-iot
 =====================
 
 <a href="http://nodered.org" target="_new">Node-RED</a> nodes to talk to Azure IoT Hub.
@@ -10,7 +10,7 @@ Install
 
 Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-        npm install node-red-azure-iot
+        npm install node-red-contrib-azure-iot
 
 Usage
 -----
