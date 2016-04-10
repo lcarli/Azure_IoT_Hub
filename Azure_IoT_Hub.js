@@ -79,7 +79,7 @@ module.exports = function(RED) {
         //getting from HTML
         var connectionString = config.connectionString;
         var deviceID = config.deviceID;
-        var timer = config.timer; 
+        //var timer = config.timer; 
         var method = config.method;
 
         //global variables

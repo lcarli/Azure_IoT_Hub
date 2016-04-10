@@ -21,7 +21,7 @@ Provides two nodes - one to receive messages (output), and one to send (input).
 
 Azure input node. Can be used to send a message to Azure IoT Hub:
 
- - Suports AMQP, MQTT and HTTP
+ - Suports AMQP, MQTT and HTTP protocols
  - Suports RegistryManager
 
 Use `msg.payload` to send a string with all data what you want to send to Azure.
@@ -33,4 +33,10 @@ Read more about Azure IoT Hub on <a href="https://azure.microsoft.com/en-us/docu
 
 ### Output
 
-"Work on it"
+Azure output node. Can be used to read a message from Azure IoT Hub:
+
+ - Suports AMQP, MQTT and HTTP protocols
+
+When the connector read something, it will pass <code>msg.payload</code> as output message with content.
+
+Read more about Azure IoT Hub on <a href="https://azure.microsoft.com/en-us/documentation/services/iot-hub/">Azure IoT Hub</a>.
