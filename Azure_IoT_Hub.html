@@ -78,9 +78,10 @@
         labelStyle: function() {
             return this.name?"node_label_italic":"";
         },
+        palleteLabel: "Azure IN",
         icon: "white-globe.png",
         defaults: {
-            name: {value:"Azure IoT"},
+            name: {value:"Azure-IoT"},
             connectionString: {value:"",required:true},
             deviceID: {value:"",required:true},
             method: {value:"HTTPS",required:true},
@@ -145,16 +146,17 @@
     RED.nodes.registerType('Azure_IoT_Hub_OUT',{
         category: 'cloud-function',
         color:"rgb(0, 171, 237)",
-        label: function() {
-            return "Azure Client";
-        },
+        label: "Azure-Client",
         labelStyle: function() {
             return this.name?"node_label_italic":"";
+        },
+        palleteLabel: function() {
+            return "Azure OUT";
         },
         icon: "white-globe.png",
         align: "right",
         defaults: {
-            name: {value:"Azure Client"},
+            name: {value:"Azure-Client"},
             connectionString: {value:"",required:true},
             deviceID: {value:"",required:true},
             method: {value:"HTTPS",required:true},
