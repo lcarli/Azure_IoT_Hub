@@ -28,6 +28,13 @@
         <input type="text" id="node-input-deviceID" placeholder="Device ID">
     </div>
     <div class="form-row">
+        <label for="node-input-method"><i class="fa fa-tasks"></i> HTTP</label>
+        <select type="text" id="node-input-method" style="width:72%;">
+        <option value="HTTP">HTTP</option>
+        <option value="AMQP">AMQP</option>
+        </select>
+    </div>
+    <div class="form-row">
         <label for="node-input-timer"><i class="fa fa-tag"></i> timer</label>
         <input type="text" id="node-input-timer" placeholder="Timer">
     </div>
@@ -35,6 +42,19 @@
 
 <script type="text/x-red" data-help-name="Azure_IoT_Hub_IN">
     <p>Provides an input node for Azure IoT Hub that you can pass data.</p>
+    <p></p>
+    <p>
+       This connector receive a <code>msg.payload</code> - as string - as a value to send to Azure. 
+    </p>
+    <p>Make sure to create a service on Azure before to use this connector.</p>
+    <p></p>
+    <p>
+        AMQP is a protocol. That means Advanced Message Queue Protocol. To know more, please visit <a href="https://www.amqp.org/">https://www.aqmp.org</a>.
+    </p>
+    <p></p>
+    <p>
+        MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. To know more, please visit <a href="http://mqtt.org/">http://mqtt.org/</a>.
+    </p>
 </script>
 
 <script type="text/javascript">
@@ -52,6 +72,7 @@
             name: {value:"Azure IoT"},
             connectionString: {value:"",required:true},
             deviceID: {value:"",required:true},
+            method: {value:"HTTP",required:true},
             timer: {value:1000, required:true, validate:RED.validators.number()}
         },
         inputs:1,

@@ -29,6 +29,7 @@ module.exports = function(RED) {
         var connectionString = config.connectionString;
         var deviceID = config.deviceID;
         var timer = config.timer; 
+        var method = config.method;
 
         //global variables
         var values;
@@ -40,7 +41,14 @@ module.exports = function(RED) {
         });
             
         //Conection with Azure IoT Hub
-        var client = new device.Client(connectionString, new device.Https());
+        if (method == "AMQP")
+        {
+            var client = new device.Client(connectionString, new device.Amqp());
+        }
+        else
+        {
+            var client = new device.Client(connectionString, new device.Https());
+        }
 
         // Create a message and send it to the IoT Hub every x ms (timer)
         setInterval(function(){
