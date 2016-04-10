@@ -30,7 +30,7 @@
     <div class="form-row">
         <label for="node-input-method"><i class="fa fa-tasks"></i> HTTP</label>
         <select type="text" id="node-input-method" style="width:72%;">
-        <option value="HTTP">HTTP</option>
+        <option value="HTTPS">HTTPS</option>
         <option value="AMQP">AMQP</option>
         </select>
     </div>
@@ -78,7 +78,7 @@
             name: {value:"Azure IoT"},
             connectionString: {value:"",required:true},
             deviceID: {value:"",required:true},
-            method: {value:"HTTP",required:true},
+            method: {value:"HTTPS",required:true},
             timer: {value:1000, required:true, validate:RED.validators.number()}
         },
         inputs:1,
