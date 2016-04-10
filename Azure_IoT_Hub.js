@@ -15,6 +15,7 @@
  **/
 
 module.exports = function(RED) {
+    "use strict";
     function Azure_IoT_Hub_IN(config) {
         RED.nodes.createNode(this,config);
         //required
@@ -63,7 +64,7 @@ module.exports = function(RED) {
         client.sendEvent(message, this.send(msgSent));
         }, timer);
      }
-     RED.nodes.registerType("Azure",Azure_IoT_Hub_IN);
+     RED.nodes.registerType("Azure Send",Azure_IoT_Hub_IN);
      
      //reading from Azure IoT Hub
      function Azure_IoT_Hub_OUT(config) {
@@ -109,5 +110,5 @@ module.exports = function(RED) {
             client.complete(msg, this.send(values));
          });
      }
-     RED.nodes.registerType("Azure",Azure_IoT_Hub_OUT);
+     RED.nodes.registerType("Azure Read",Azure_IoT_Hub_OUT);
 }
