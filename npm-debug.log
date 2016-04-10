@@ -1,0 +1,93 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec { raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: 'C:\\Users\\luhumenh\\Downloads\\Azure_IoT_Hub',
+8 silly cache add   type: 'directory' }
+9 verbose addLocalDirectory C:\Users\luhumenh\AppData\Roaming\npm-cache\node-red-azure-iot-hub\0.0.2\package.tgz not in flight; packing
+10 verbose tar pack [ 'C:\\Users\\luhumenh\\AppData\\Roaming\\npm-cache\\node-red-azure-iot-hub\\0.0.2\\package.tgz',
+10 verbose tar pack   'C:\\Users\\luhumenh\\Downloads\\Azure_IoT_Hub' ]
+11 verbose tarball C:\Users\luhumenh\AppData\Roaming\npm-cache\node-red-azure-iot-hub\0.0.2\package.tgz
+12 verbose folder C:\Users\luhumenh\Downloads\Azure_IoT_Hub
+13 info prepublish node-red-azure-iot-hub@0.0.2
+14 verbose addLocalTarball adding from inside cache C:\Users\luhumenh\AppData\Roaming\npm-cache\node-red-azure-iot-hub\0.0.2\package.tgz
+15 silly cache afterAdd node-red-azure-iot-hub@0.0.2
+16 verbose afterAdd C:\Users\luhumenh\AppData\Roaming\npm-cache\node-red-azure-iot-hub\0.0.2\package\package.json not in flight; writing
+17 verbose afterAdd C:\Users\luhumenh\AppData\Roaming\npm-cache\node-red-azure-iot-hub\0.0.2\package\package.json written
+18 silly publish { name: 'node-red-azure-iot-hub',
+18 silly publish   description: 'Connector to azure on Node-Red',
+18 silly publish   version: '0.0.2',
+18 silly publish   engines: { node: '>=0.10.0' },
+18 silly publish   dependencies: { 'azure-iot-device': '^1.0.0-preview.4' },
+18 silly publish   keywords: [ 'node-red' ],
+18 silly publish   'node-red': { nodes: { Azure: 'Azure_IoT_Hub.js' } },
+18 silly publish   author:
+18 silly publish    { name: 'Lucas Humenhuk',
+18 silly publish      email: 'luhumenh@microsoft.com',
+18 silly publish      url: 'http://nodered.org' },
+18 silly publish   gitHead: '7dc4955553e1691072d0c106a82af4fb6be2b427',
+18 silly publish   readme: 'ERROR: No README data found!',
+18 silly publish   _id: 'node-red-azure-iot-hub@0.0.2',
+18 silly publish   scripts: {},
+18 silly publish   _shasum: '0ad3fb47c4f983e869f88c5aca59a945ddcde9d5',
+18 silly publish   _from: '.' }
+19 silly mapToRegistry name node-red-azure-iot-hub
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/node-red-azure-iot-hub
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading C:\Users\luhumenh\AppData\Roaming\npm-cache\node-red-azure-iot-hub\0.0.2\package.tgz
+25 verbose request uri https://registry.npmjs.org/node-red-azure-iot-hub
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 2:15:09 AM
+28 verbose request using bearer token for auth
+29 verbose request id 91d82f447a3b32fc
+30 http request PUT https://registry.npmjs.org/node-red-azure-iot-hub
+31 http 403 https://registry.npmjs.org/node-red-azure-iot-hub
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Sun, 10 Apr 2016 05:15:11 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-jfk1028-JFK',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1460265310.472016,VS0,VE815',
+32 verbose headers   vary: 'Accept-Encoding' }
+33 verbose request invalidating C:\Users\luhumenh\AppData\Roaming\npm-cache\registry.npmjs.org\node-red-azure-iot-hub on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.0.2." : node-red-azure-iot-hub
+35 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:247:14)
+35 verbose stack     at Request._callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:170:14)
+35 verbose stack     at Request.self.callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:344:22)
+35 verbose stack     at Request.emit (events.js:110:17)
+35 verbose stack     at Request.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:1239:14)
+35 verbose stack     at Request.emit (events.js:129:20)
+35 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:1187:12)
+35 verbose stack     at IncomingMessage.emit (events.js:129:20)
+35 verbose stack     at _stream_readable.js:908:16
+35 verbose stack     at process._tickCallback (node.js:355:11)
+36 verbose statusCode 403
+37 verbose pkgid node-red-azure-iot-hub
+38 verbose cwd C:\Users\luhumenh\Downloads\Azure_IoT_Hub
+39 error Windows_NT 6.3.9600
+40 error argv "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+41 error node v0.12.2
+42 error npm  v2.7.4
+43 error code E403
+44 error "You cannot publish over the previously published version 0.0.2." : node-red-azure-iot-hub
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
