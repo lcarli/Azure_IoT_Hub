@@ -18,12 +18,11 @@ module.exports = function(RED) {
     function Azure_IoT_Hub_IN(config) {
         RED.nodes.createNode(this,config);
         //required
-        var device = require('azure-iot-device'); 
-        
-        //possibilidade de colocar protocol
-        //device.Amqp
-        //device.Https
-        //device.Mqtt   
+        var device = require('azure-iot-device');
+        var Protocol;
+        var ProtocolHTTP = require('azure-iot-device-http').Http; 
+        var ProtocolAMQP = require('azure-iot-device-amqp').Amqp;
+        var ProtocolMQTT = require('azure-iot-device-mqtt').Mqtt;
 
         //getting from HTML
         var connectionString = config.connectionString;
@@ -43,12 +42,18 @@ module.exports = function(RED) {
         //Conection with Azure IoT Hub
         if (method == "AMQP")
         {
-            var client = new device.Client(connectionString, new device.Amqp());
+            Protocol = ProtocolAMQP;
+        }
+        else if (method == "MQTT")
+        {
+            Protocol = ProtocolMQTT;
         }
         else
         {
-            var client = new device.Client(connectionString, new device.Https());
+            Protocol = ProtocolHTTP;
         }
+        
+        var client = new device.Client.fromConnectionString(connectionString, Protocol);
 
         // Create a message and send it to the IoT Hub every x ms (timer)
         setInterval(function(){

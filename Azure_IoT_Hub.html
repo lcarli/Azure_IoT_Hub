@@ -32,6 +32,7 @@
         <select type="text" id="node-input-method" style="width:72%;">
         <option value="HTTPS">HTTPS</option>
         <option value="AMQP">AMQP</option>
+        <option value="MQTT">MQTT</option>
         </select>
     </div>
     <div class="form-row">
@@ -42,6 +43,10 @@
 
 <script type="text/x-red" data-help-name="Azure_IoT_Hub_IN">
     <p>Provides an input node for Azure IoT Hub that you can pass data.</p>
+    <p></p>
+    <p>
+        Connection String <b>must</b> be in this format -> <code>HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key></code>
+    </p>
     <p></p>
     <p>
        This connector receive a <code>msg.payload</code> - as string - as a value to send to Azure. 
