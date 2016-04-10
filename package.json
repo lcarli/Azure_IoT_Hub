@@ -1,7 +1,7 @@
 {
-  "name": "node-red-azure-iot-hub",
+  "name": "node-red-contrib-azure-iot-hub",
   "description": "Connector to azure on Node-Red",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "node": ">=0.10.0"
   },
