@@ -1,0 +1,22 @@
+{
+  "name": "node-red-azure-iot-hub",
+  "description": "Connector to azure on Node-Red",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+      "azure-iot-device": "^1.0.0-preview.4"
+  },
+  "keywords":["node-red"],
+  "node-red" :{
+      "nodes" : {
+          "Azure": "Azure_IoT_Hub.js"
+      }
+  },
+  "author": {
+    "name": "Lucas Humenhuk",
+    "email": "luhumenh@microsoft.com",
+    "url": "http://nodered.org"
+  }
+}

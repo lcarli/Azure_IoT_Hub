@@ -1,0 +1,60 @@
+<!--
+  Copyright 2013 IBM Corp.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/x-red" data-template-name="Azure_IoT_Hub_IN">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-connectionString"><i class="fa fa-tag"></i> connectionstring</label>
+        <input type="text" id="node-input-connectionString" placeholder="connection string">
+    </div>
+    <div class="form-row">
+        <label for="node-input-deviceID"><i class="fa fa-tag"></i> deviceID</label>
+        <input type="text" id="node-input-deviceID" placeholder="Device ID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-timer"><i class="fa fa-tag"></i> timer</label>
+        <input type="text" id="node-input-timer" placeholder="Timer">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Azure_IoT_Hub_IN">
+    <p>Provides an input node for Azure IoT Hub that you can pass data.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('Azure_IoT_Hub_IN',{
+        category: 'input',
+        color:"rgb(0, 171, 237)",
+        label: function() {
+            return this.name||"Azure";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        },
+        icon: "white-globe.png",
+        defaults: {
+            name: {value:"Azure IoT"},
+            connectionString: {value:"",required:true},
+            deviceID: {value:"",required:true},
+            timer: {value:1000, required:true, validate:RED.validators.number()}
+        },
+        inputs:1,
+        outputs:0
+    });
+</script>
